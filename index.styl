@@ -1,0 +1,114 @@
+/* Styl for widget*/
+
+.editor-wysiwyg
+	box-sizing: border-box
+	position: relative
+	display: flex
+	flex-direction: column-reverse
+	svg use
+		pointer-events: none
+	kbd
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		position: relative
+		cursor: pointer
+		svg
+			width: 1.5rem
+			height: 1rem
+			fill: ButtonFace
+			pointer-events: none
+		&:hover svg, &.active svg
+			fill: GrayText
+		&:active svg
+			fill: ButtonText
+
+	nav
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 0px 1rem
+		height: 2rem
+		border-bottom: 1px solid GrayText
+		& > ul
+			margin: 0px
+			padding: 0px
+			display: flex
+			align-items: center
+			gap: 1ex
+			& > li
+				display: flex
+				align-items: center
+				justify-content: center
+		& > aside
+			display: flex
+			align-items: center
+			justify-content: space-between
+			gap: 1ex
+
+	iframe
+		// resize: auto
+		border: 0px solid transparent
+		min-width: 100%
+		flex-grow: 1
+
+	details
+		s
+			text-decoration: none
+			margin-top: .5rem
+			&:before, &:after
+				content: ""
+				width: 1rem
+				height: 1rem
+				background: Canvas
+				position: absolute
+				transform: rotate(45deg) translate(.5rem, -.8rem)
+				top: 0px
+				z-index: 2
+			&:before
+				box-shadow: 0px 0px 1rem ButtonFace
+				z-index: 0
+			& > *
+				background: Canvas
+				box-shadow: 0px 0px 1rem ButtonFace
+				z-index: 1
+				position: relative
+				padding: 1rem
+			& > ul
+				list-style: none
+				margin: .5rem 0px
+				padding: .5rem 0px
+				overflow: auto
+				& > li
+					display: flex
+					align-items: center
+					height: 2rem
+					padding: 0px 1rem
+					cursor: pointer
+					&:hover
+						background: ButtonFace
+
+		& > summary
+			display: flex
+			align-items: center
+			justify-content: center
+			&:after
+				content: ''
+				transform: translateY(.1rem) rotate(30deg)
+				align-self: flex-end
+				font-size: .5rem
+				display: list-item
+				counter-increment: list-item 0
+				list-style: inside disclosure-closed
+				color: ButtonFace
+			&:hover:after
+				color: GrayText
+		&[open]
+			s
+				position: absolute
+			& > summary svg
+				fill: ButtonText !important
+			& > summary:after
+				transform: none
+				list-style: inside disclosure-open
+				color: ButtonText

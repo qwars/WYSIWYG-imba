@@ -1,0 +1,24 @@
+
+.NavFormContentTable
+	display: flex
+	flex-direction: column
+	nav
+		background: ButtonFace
+		border-bottom-color: ButtonFace !important
+		& > ul
+			align-self: stretch
+			align-items: stretch !important
+			transform: translateY(1px)
+			margin-top: .3rem  !important
+			li
+				padding: 0px 1ex
+				border-radius: 2px 2px 0px  0px
+				color: GrayText
+				cursor: pointer
+			li.active
+				background: Canvas
+				color: ButtonText
+		& .table ~ *
+			display: none
+	section
+		padding: 1rem 0px
