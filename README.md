@@ -1,12 +1,14 @@
-# template-ui-kid :: editor-wysiwyg
+# WYSIWYG-imba
 
 Editor WYSIWYG
 
 ## Install
 
-`git submodule add -b editor-wysiwyg git@github.com:qwars/template-ui-kid.git patch-widgets-folder/editor-wysiwyg`
+`git submodule add git@github.com:qwars/WYSIWYG-imba.git {patch-widgets-folder/editor-wysiwyg}`
 
 `yarn add codemirror@5 colord`
+
+`git submodule update --init --recursive --remote` - забрать изменения
 
 ## Import
 
