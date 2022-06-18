@@ -5,23 +5,20 @@
 	position: relative
 	display: flex
 	flex-direction: column-reverse
-	svg use
-		pointer-events: none
 	kbd
 		display: inline-flex
 		align-items: center
 		justify-content: center
 		position: relative
 		cursor: pointer
-		svg
-			width: 1.5rem
-			height: 1rem
-			fill: ButtonFace
+		width: 1.5rem
+		height: 1.5rem
+		color: var(--extra-color, ButtonBorder)
+		svg, img, use
+			width: 100%
+			height: 100%
+			fill: currentColor
 			pointer-events: none
-		&:hover svg, &.active svg
-			fill: GrayText
-		&:active svg
-			fill: ButtonText
 
 	nav
 		display: flex
@@ -29,7 +26,7 @@
 		justify-content: space-between
 		padding: 0px 1rem
 		height: 2rem
-		border-bottom: 1px solid GrayText
+		border-bottom: 1px solid var(--border-color, ButtonBorder)
 		& > ul
 			margin: 0px
 			padding: 0px
@@ -40,6 +37,11 @@
 				display: flex
 				align-items: center
 				justify-content: center
+				.buttons
+					display: inline-flex
+					align-items: center
+					justify-content: space-between
+					gap: 1ex
 		& > aside
 			display: flex
 			align-items: center
@@ -56,24 +58,27 @@
 		s
 			text-decoration: none
 			margin-top: .5rem
-			&:before, &:after
+			&:before
 				content: ""
 				width: 1rem
 				height: 1rem
-				background: Canvas
+				background: var( --canvas-color, Canvas )
 				position: absolute
 				transform: rotate(45deg) translate(.5rem, -.8rem)
 				top: 0px
 				z-index: 2
 			&:before
-				box-shadow: 0px 0px 1rem ButtonFace
+				box-shadow: 0px .5rem 1rem var(--border-color, ButtonFace)
 				z-index: 0
 			& > *
-				background: Canvas
-				box-shadow: 0px 0px 1rem ButtonFace
+				background: var( --canvas-color, Canvas )
+				box-shadow: 0px .5rem 1rem var(--border-color, ButtonFace)
 				z-index: 1
 				position: relative
 				padding: 1rem
+				button
+					height: 2rem
+					justify-content: center
 			& > ul
 				list-style: none
 				margin: .5rem 0px
@@ -86,7 +91,9 @@
 					padding: 0px 1rem
 					cursor: pointer
 					&:hover
-						background: ButtonFace
+						background: var(--border-color, ButtonFace)
+					&.active
+						background: var(--select-color, ButtonFace)
 
 		& > summary
 			display: flex
@@ -94,21 +101,15 @@
 			justify-content: center
 			&:after
 				content: ''
-				transform: translateY(.1rem) rotate(30deg)
+				transform: translate(.2rem, .2rem) rotate(30deg)
 				align-self: flex-end
 				font-size: .5rem
 				display: list-item
 				counter-increment: list-item 0
 				list-style: inside disclosure-closed
-				color: ButtonFace
-			&:hover:after
-				color: GrayText
 		&[open]
 			s
 				position: absolute
-			& > summary svg
-				fill: ButtonText !important
 			& > summary:after
-				transform: none
+				transform: translate(.1rem, .2rem)
 				list-style: inside disclosure-open
-				color: ButtonText

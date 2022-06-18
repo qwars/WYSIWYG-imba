@@ -7,7 +7,7 @@ export tag Plugin < span
 		data.execCommand $1, false
 
 	def render
-		<self>
+		<self.buttons>
 			<kbd :tap.commandExec('insertUnorderedList')> <svg:svg> <svg:use href="{ ISymbol }#list-ul">
 			<kbd :tap.commandExec('insertOrderedList')> <svg:svg> <svg:use href="{ ISymbol }#list-ol">
 

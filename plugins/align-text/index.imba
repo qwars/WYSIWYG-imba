@@ -7,7 +7,7 @@ export tag Plugin < span
 		data.execCommand $1, false
 
 	def render
-		<self>
+		<self.buttons>
 			<kbd :tap.commandExec('justifyLeft')> <svg:svg> <svg:use href="{ ISymbol }#align-left">
 			<kbd :tap.commandExec('justifyCenter')> <svg:svg> <svg:use href="{ ISymbol }#align-center">
 			<kbd :tap.commandExec('justifyFull')> <svg:svg> <svg:use href="{ ISymbol }#align-justify">

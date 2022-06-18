@@ -4,7 +4,7 @@ import './index.styl'
 
 const ISymbol = require './symbol.svg'
 
-import Widget as InputUnits from '../../input-units'
+# import Widget as InputUnits from '../../input-units'
 
 tag FormCreateContent < form
 
@@ -33,9 +33,11 @@ tag FormCreateContent < form
 						<abbr> <svg:svg> <svg:use href="{ ISymbol }#cloud-upload">
 					else console.dir data
 				<figcaption data-placeholder="Title for image" contenteditable=true> data and data:alt or data and data:title
+			###
 			<section>
 				<InputUnits[ computed:width ]@width disabled=!data :input.stop.silence.inputStateStyle> "width"
 				<InputUnits[ computed:height ]@height disabled=!data :input.stop.silence.inputStateStyle> "height"
+			###
 			<button.active> data ? "Update" : "Create"
 
 export tag Plugin < details

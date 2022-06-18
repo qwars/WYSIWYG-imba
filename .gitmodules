@@ -1,0 +1,4 @@
+[submodule "colors-collection"]
+	path = colors-collection
+	url = git@github.com:qwars/imba-material-ui.git
+	branch = colors-collection
